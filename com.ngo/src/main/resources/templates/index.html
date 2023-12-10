@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haripratap Memorial & Welfare Trust</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+      <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+    <script src="https://kit.fontawesome.com/e01875523f.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!-- section above navbar -->
+    <div class="section-above-navbar">
+        <i class="fa-sharp fa-light fa-hexagon hexagon1"></i>
+        <img src="./home-pg-images/hpwm.png" class="logo-above"/>
+    </div>
+    <div th:if="${success}" class="success">
+        <p>User registered successfully!</p>
+    </div>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand sticky-top">
+     
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html"> <img class="navbar-logo-img" src="./home-pg-images/hpwm-white.png"
+                    alt="logo-img" /></a>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        About Us
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Advisory Committee</a></li>
+                        <li><a class="dropdown-item" href="#">Board Members</a></li>
+                        <li><a class="dropdown-item" href="#">Members</a></li>
+                        <li><a class="dropdown-item" href="#">Vision & Mission</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Projects
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Media
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Photo Gallery</a></li>
+                        <li><a class="dropdown-item" href="#">Video Gallery</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Join Us
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/joinNgo">Join NGO</a></li>
+                    </ul>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a href="/donate" class="btn btn-donate">Donate</a></li>
+                    </ul>
+                    
+                </li>
+
+
+                <button  onclick="payment" class="btn btn-donate">Donate</button>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- carousal slideshow  and donation box-->
+
+    <div class="carousel-donation">
+
+        <!-- carousel slideshow -->
+
+        <div id="carouselExampleFade" class="carousel slide carousel-fade">
+            <div class="carousel-inner">
+                <div class="carousel-heading"> Together we <br /> can save the world! </div>
+                <div class="carousel-cap"> Let's help people altogether. </div>
+                <button type="button" class="btn btn-donate-cr">Donate</button>
+                <a href="/joinNgo" class="btn btn-joinus-cr">Join NGO</a>
+                <div class="carousel-item active">
+                    <img src="./home-pg-images/img-1.jpg" class="d-block w-100" alt="carousal">
+                </div>
+                <div class="carousel-item">
+                    <img src="./home-pg-images/img-2.jpg" class="d-block w-100" alt="carousal">
+                </div>
+                <div class="carousel-item">
+                    <img src="./home-pg-images/img-3.jpg" class="d-block w-100" alt="carousal">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- donation done section -->
+
+        <div class="donation-box"> </div>
+    </div>
+
+    <!-- cards section -->
+
+    <div class="cards-sec">
+        <div class="card card1">
+            <i class="fa-solid fa-hand-holding-heart card-icon"></i>
+            <p class="cards-heading">Who we are?</p>
+            <p class="cards-cap">We organize, promote, undertake, sponsor carry out all programmes for the benefit of
+                naturally challenged person, schedule caste, schedule tribes, people under poverty line,
+                old aged widow and down trodden irrespective of caste,creed,sex and gender.</p>
+        </div>
+        <div class="card card2">
+            <i class="fa-solid fa-seedling card-icon"></i>
+            <p class="cards-heading">What we do?</p>
+            <p class="cards-cap">We are the group of people who think about other people's good and are always eager to
+                provide helping hands to the needy and we believe that change in the society can only be
+                brought from starting with ourselves.
+            </p>
+        </div>
+        <div class="card card3">
+            <i class="fa-solid fa-hand-holding-hand card-icon"></i>
+            <p class="cards-heading">How we do?</p>
+            <p class="cards-cap">We organize programmes for the promotion of pre-primary education, run or
+                maintain a hospital, nursing home care centers, distribute food packets to street children,
+                provide food grains to old age homes and orphan houses.
+            </p>
+        </div>
+    </div>
+
+    <!-- welcome section -->
+
+    <div class="welcome-sec">
+        <div class="welcome-head"> Welcome to Haripratap <br /> Memorial & Welfare Trust </div>
+        <div class="hr-welcome"> </div>
+        <div class="welcome-content"> Our NGO works for providing healthy lifestyle for one's growth and development. We
+            have extended our scope by providing accidental insurances to the peoples across the small tribal areas that
+            are free of costs. Moreover, the people are being educated about government schemes and policies like PM
+            suraksha beema yojna and PM Sehat Beema Yojna and enables them to attain this without any hindrances.</div>
+        <img src="./home-pg-images/welcome-sec-img.jpg" class="welcome-sec-img" />
+        <button type="button" class="btn btn-about-us"> About Us </button>
+        <img src="./home-pg-images/welcome-sec-bg.jpg" class="welcome-bg" />
+    </div>
+
+    <!-- gallery section -->
+
+    <div class="gallery-sec">
+        <div class="gallery-head"> Media Gallery </div>
+        <div class="hr-gallery"> </div>
+        <img src="./home-pg-images/gallery-sec-bg.jpeg" class="gallery-bg" />
+    </div>
+
+    <!-- testimonial section -->
+
+    <div class="testimonial-sec">
+
+    </div>
+
+    <!-- footer -->
+
+    <footer class="footer-sec">
+        <div class="logo-link-footer">
+            <img src="./home-pg-images/hpwm.png" class="footer-img" />
+            <div class="link-icon">
+                <a href="https://instagram.com/hpmw_trust?igshid=NGVhN2U2NjQ0Yg==" class="link-icon-ins"> <i
+                        class="fa-brands fa-instagram"></i> </a>
+                <a href="https://www.facebook.com/profile.php?id=61553481217676" class="link-icon-fac"> <i
+                        class="fa-brands fa-facebook"></i> </a>
+            </div>
+        </div>
+        <div class="links-footer">
+            <ul class="links-list">
+                <li> Useful Links </li>
+                <li> Become a Volunteer </li>
+                <li> Donate </li>
+                <li> About Us </li>
+                <li> Media Gallery </li>
+                <li> Privacy Policy </li>
+            </ul>
+        </div>
+        <div class="contact-footer">
+            <ul class="contact-list">
+                <li> Contact </li>
+                <li> </li>
+                <li> </li>
+                <li> </li>
+            </ul>
+        </div>
+        <img src="./home-pg-images/footer-sec-bg.jpg" class="footer-bg-img" />
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

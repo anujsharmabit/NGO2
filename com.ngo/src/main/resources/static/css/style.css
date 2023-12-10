@@ -1,0 +1,367 @@
+:root {
+    --cp-navy-blue: #512C96;
+    --cp-greenish-blue: #3C6F9C;
+    --cp-pink: #DD6892;
+    --cp-peach: #F9C6BA;
+
+    --cp-yellow: #FFDAA9;
+    --cp-green: #6FA3A9;
+    --cp-medium-blue: #5F72B2;
+    --cp-purple: #60366F;
+}
+
+/* section above navbar */
+
+.section-above-navbar {
+    height: 120px;
+}
+.success {
+    color: green; /* Change the color to your preference */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hexagon1 {
+    
+}
+
+.logo-above {
+    height: 150px;
+    width: 150px;
+}
+/* navbar */
+
+.container-fluid {
+    background-color: #000000;
+    height: 70px;
+    margin-bottom: 0;
+}
+
+.navbar-logo-img {
+    height: 50px;
+    weight: 50px;
+    margin-left: 10px;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.dropdown-menu {
+    background-color: #00000098;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.btn-donate {
+    background-color: var(--cp-pink);
+    font-weight: bold;
+    font-size: 16pt;
+    color: white;
+    border: none;
+    height: 50px;
+    margin-left: 30px;
+    margin-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.btn-donaṭe :hover {
+    font-size: 18px;
+    color: white !important;
+}
+
+/* carousal slideshow  and donation box */
+
+.carousel-donation {
+    position: relative;
+    height: 107vh;
+}
+
+/* carousal slideshow */
+
+.carousel-inner {
+    height: 80vh;
+    position: relative;
+}
+
+.carousel-heading {
+    position: absolute;
+    z-index: 2;
+    font-size: 48pt;
+    color: white;
+    top: 180px;
+    left: 180px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.carousel-cap {
+    position: absolute;
+    z-index: 2;
+    top: 330px;
+    left: 180px;
+    color: white;
+    font-size: 20pt;
+    /* display: inline-block; */
+}
+
+.btn-donate-cr {
+    position: absolute;
+    background-color: var(--cp-pink);
+    font-weight: bold;
+    font-size: 16pt;
+    color: white;
+    border: none;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    z-index: 2;
+    top: 400px;
+    left: 180px;
+}
+
+.btn-joinus-cr {
+    position: absolute;
+    background-color: transparent;
+    border: solid 4px var(--cp-pink);
+    font-weight: bold;
+    font-size: 16pt;
+    color: white;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    z-index: 2;
+    top: 400px;
+    left: 340px;
+}
+
+/* donation done section */
+
+.donation-box {
+    background-color: var(--cp-peach);
+    height: 300px;
+    width: 1450px;
+    position: absolute;
+    top: 560px;
+    z-index: 1;
+    left: 120px;
+}
+
+/* cards section */
+
+.cards-sec {
+    display: flex;
+    gap: 50px;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--cp-yellow);
+    height: 500px;
+    width: 400px;
+    
+}
+
+.card-icon {
+    color: white;
+    margin: 40px auto 0 auto;
+    font-size: 70px;
+    padding: 20px;
+}
+
+.card-icon:hover {
+    color: var(--cp-purple);
+    font-size: 90px;
+}
+
+.cards-heading {
+    margin: 10px auto 20px auto; 
+    font-size: 24pt;
+    color: white;
+    font-weight: bold;
+}
+
+.cards-cap {
+    font-size: 16pt;
+    color: white;
+    text-align: center;
+    margin: 0 10px;
+}   
+
+/* welcome-section */
+
+.welcome-sec{
+    margin-top: 50px;
+    width: 100%;
+    height: 550px;
+    /* background-color:#00000099; */
+    background: rgba(0,0,0,0.8);
+    position: relative;
+
+}
+
+.welcome-head {
+    position: absolute;
+    color: white;
+    font-size: 30pt;
+    font-weight: bold;
+    left: 200px;
+    top: 100px;
+}
+
+.hr-welcome {
+    position: absolute;
+    background-color: var(--cp-green);
+    height: 3px;
+    width: 200px;
+    left: 200px;
+    top: 230px;
+}
+
+.welcome-content {
+    position: absolute;
+    color: white;
+    left: 200px;
+    top: 245px;
+    width: 800px;
+    font-size: 13pt;
+}
+
+.welcome-sec-img {
+    position: absolute;
+    right:200px;
+    top: 70px;
+    
+}
+
+.btn-about-us {
+    position: absolute;
+    background-color: var(--cp-green);
+    font-weight: bold;
+    font-size: 16pt;
+    color: white;
+    border: none;
+    height: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    z-index: 2;
+    top: 400px;
+    left: 200px;
+}
+
+.welcome-bg{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    bottom: 0px;
+}
+
+/* gallery-section */
+
+.gallery-sec {
+    background-color: rgba(255,255,255,0.75);
+    height: 800px;
+    position: relative;
+}
+
+.gallery-head {
+    position: absolute;
+    color: black;
+    font-size: 30pt;
+    font-weight: bold;
+    left: 200px;
+    top: 100px;
+}
+
+.hr-gallery {
+    position: absolute;
+    background-color: var(--cp-green);
+    height: 4px;
+    width: 200px;
+    left: 200px;
+    top: 170px;
+}
+
+.gallery-bg {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    height: 800px;
+    object-fit: cover;
+}
+
+/* testimonial section */
+
+
+/* footer section */
+
+.footer-sec {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 500px;
+    justify-content: center;
+    gap: 400px;
+    align-items: center;
+}
+
+.logo-link-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.link-icon {
+    margin: 0 auto;
+}
+
+.link-icon-ins {
+    margin-right: 20px;
+}
+
+.footer-img {
+    height: 300px;
+    width: 300px;
+}
+
+.fa-instagram {
+    color: white;
+}
+
+.fa-facebook {
+    color: white;
+}
+
+.links-list {
+    color: white;
+    list-style: none;
+}
+
+.contact-list {
+    color: white;
+    list-style: none;
+}
+
+.footer-bg-img {
+    position: absolute;
+    z-index: -1;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+}

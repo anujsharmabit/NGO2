@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Person Form</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 20px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+span.error {
+    color: red;
+}
+.error{
+color:red;
+}
+    </style>
+</head>
+<body>
+
+<form action="/index" method="post" enctype="multipart/form-data" th:object="${ngoPerson}">
+
+    <!-- Authorised Person -->
+    <div>
+        <!-- General error message for Authorised Person -->
+        <div th:if="${#fields.hasErrors('authorisedPerson')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="authorisedPerson">Authorised Person *</label>
+        <input type="text" id="authorisedPerson" name="authorisedPerson" th:field="*{authorisedPerson}">
+        <span class="error" th:if="${#fields.hasErrors('authorisedPerson')}" th:errors="*{authorisedPerson}"></span>
+    </div>
+
+    <!-- Organisation Name -->
+    <div>
+    <div th:if="${organisationNameExists}" class="error">
+        <p>Organisation Name already exists. Please use a different Name.</p>
+    </div>
+        <!-- General error message for Organisation Name -->
+        <div th:if="${#fields.hasErrors('organisationName')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationName">Organisation Name *</label>
+        <input type="text" id="organisationName" name="organisationName" th:field="*{organisationName}">
+        <span class="error" th:if="${#fields.hasErrors('organisationName')}" th:errors="*{organisationName}"></span>
+    </div>
+    
+  <!-- General error message for Type Of Organisation -->
+<div th:if="${#fields.hasErrors('typeOfOrganisation')}" class="error">
+    <p>Please correct the errors below and try again.</p>
+</div>
+
+<!-- Type Of Organisation -->
+<label for="typeOfOrganisation">Type Of Organisation</label>
+<select id="typeOfOrganisation" name="typeOfOrganisation" th:field="*{typeOfOrganisation}" required>
+    <option value="" disabled selected>Select Type</option>
+    <option value="Society">Society</option>
+    <option value="Trust">Trust</option>
+    <option value="Section 8 Company">Section 8 Company</option>
+    <!-- Add more options as needed -->
+</select>
+<span th:if="${#fields.hasErrors('typeOfOrganisation')}" th:errors="*{typeOfOrganisation}"></span>
+
+    <!-- Organisation Email -->
+    <div>
+    <div th:if="${emailExists}" class="error">
+        <p>Email already exists. Please use a different email.</p>
+    </div>
+        <!-- General error message for Organisation Email -->
+        <div th:if="${#fields.hasErrors('organisationEmail')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationEmail">Organisation Email *</label>
+        <input type="text" id="organisationEmail" name="organisationEmail" th:field="*{organisationEmail}">
+        <span class="error" th:if="${#fields.hasErrors('organisationEmail')}" th:errors="*{organisationEmail}"></span>
+    </div>
+
+    <!-- Authorised Person Email -->
+    <div>
+        <!-- General error message for Authorised Person Email -->
+        <div th:if="${#fields.hasErrors('authorisedPersonEmail')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="authorisedPersonEmail">Authorised Person Email *</label>
+        <input type="text" id="authorisedPersonEmail" name="authorisedPersonEmail" th:field="*{authorisedPersonEmail}">
+        <span class="error" th:if="${#fields.hasErrors('authorisedPersonEmail')}" th:errors="*{authorisedPersonEmail}"></span>
+    </div>
+
+    <!-- Website of Organisation -->
+    <div>
+        <!-- General error message for Website of Organisation -->
+        <div th:if="${#fields.hasErrors('website')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="website">Website of Organisation *</label>
+        <input type="text" id="website" name="website" th:field="*{website}">
+        <span class="error" th:if="${#fields.hasErrors('website')}" th:errors="*{website}"></span>
+    </div>
+
+    <!-- Working Area -->
+    <div>
+        <!-- General error message for Working Area -->
+        <div th:if="${#fields.hasErrors('workingArea')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="workingArea">Working Area *</label>
+        <input type="text" id="workingArea" name="workingArea" th:field="*{workingArea}">
+        <span class="error" th:if="${#fields.hasErrors('workingArea')}" th:errors="*{workingArea}"></span>
+    </div>
+
+    <!-- Mobile -->
+    <div>
+        <!-- General error message for Mobile -->
+        <div th:if="${#fields.hasErrors('mobile')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="mobile">Mobile *</label>
+        <input type="text" id="mobile" name="mobile" th:field="*{mobile}">
+        <span class="error" th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}"></span>
+    </div>
+
+    <!-- Phone -->
+    <div>
+        <!-- General error message for Phone -->
+        <div th:if="${#fields.hasErrors('phone')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="phone">Phone *</label>
+        <input type="text" id="phone" name="phone" th:field="*{phone}">
+        <span class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></span>
+    </div>
+
+    <!-- Organisation Address -->
+    <div>
+        <!-- General error message for Organisation Address -->
+        <div th:if="${#fields.hasErrors('organisationAddress')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationAddress">Organisation Address *</label>
+        <input type="text" id="organisationAddress" name="organisationAddress" th:field="*{organisationAddress}">
+        <span class="error" th:if="${#fields.hasErrors('organisationAddress')}" th:errors="*{organisationAddress}"></span>
+    </div>
+
+    <!-- Organisation City -->
+    <div>
+        <!-- General error message for Organisation City -->
+        <div th:if="${#fields.hasErrors('organisationCity')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationCity">Organisation City *</label>
+        <input type="text" id="organisationCity" name="organisationCity" th:field="*{organisationCity}">
+        <span class="error" th:if="${#fields.hasErrors('organisationCity')}" th:errors="*{organisationCity}"></span>
+    </div>
+
+    <!-- Organisation State -->
+    <div>
+        <!-- General error message for Organisation State -->
+        <div th:if="${#fields.hasErrors('organisationState')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationState">Organisation State *</label>
+        <input type="text" id="organisationState" name="organisationState" th:field="*{organisationState}">
+        <span class="error" th:if="${#fields.hasErrors('organisationState')}" th:errors="*{organisationState}"></span>
+    </div>
+
+    <!-- Organisation Country -->
+    <div>
+        <!-- General error message for Organisation Country -->
+        <div th:if="${#fields.hasErrors('organisationCountry')}" class="error">
+            <p>Please correct the errors below and try again.</p>
+        </div>
+        <label for="organisationCountry">Organisation Country *</label>
+        <input type="text" id="organisationCountry" name="organisationCountry" th:field="*{organisationCountry}">
+        <span class="error" th:if="${#fields.hasErrors('organisationCountry')}" th:errors="*{organisationCountry}"></span>
+    </div>
+    <!-- Submit Button -->
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
